@@ -27,12 +27,7 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-<<<<<<< HEAD
-              "src/assets",
-              "src/data"
-=======
               "src/assets"
->>>>>>> b0a8fc031967b2c778d8af94980cec2f486a6544
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -100,19 +95,12 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-<<<<<<< HEAD
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-=======
               "src/assets",
               "src/data"
             ],
             "styles": [
               "src/styles.css",
               "./src/assets/fontawesome-free-5.15.4-web/css/all.css"
->>>>>>> b0a8fc031967b2c778d8af94980cec2f486a6544
             ],
             "scripts": []
           }

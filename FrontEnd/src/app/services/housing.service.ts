@@ -11,7 +11,7 @@ export class HousingService {
   constructor(private http:HttpClient) {
   }
 
-  getAllProperties():Observable<any>{
+  getAllProperties(SellRent:number):Observable<any>{
     return this.http.get('assets/data/properties.json');
   }
 }

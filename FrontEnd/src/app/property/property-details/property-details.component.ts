@@ -14,7 +14,12 @@ export class PropertyDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.propertyId=Number(this.route.snapshot.params['id']);
-    console.log(this.propertyId);
+    // to update id in pagenation
+    this.route.params.subscribe(
+      (param)=>{
+        this.propertyId=+param['id'];
+      }
+    );
   }
 
   OnSelectNext(){
