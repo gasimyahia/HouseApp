@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IProperty } from '../IProperty';
 
 @Component({
   selector: 'app-property-card',
@@ -7,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PropertyCardComponent implements OnInit {
 
-  @Input() property :any;
+  @Input() property :IProperty ;
 
   constructor() { }
 
