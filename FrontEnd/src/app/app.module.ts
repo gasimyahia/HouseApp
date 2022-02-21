@@ -1,3 +1,5 @@
+import { AlertifyService } from './services/alertify.service';
+import { UserServiceService } from './services/user-service.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
@@ -44,7 +46,9 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    HousingService
+    HousingService,
+    UserServiceService,
+    AlertifyService
   ],
   bootstrap: [AppComponent]
 })

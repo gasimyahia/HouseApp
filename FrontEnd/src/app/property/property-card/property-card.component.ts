@@ -1,6 +1,5 @@
+import { IProperty } from './../../model/IProperty';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { IProperty } from '../IProperty';
 
 @Component({
   selector: 'app-property-card',
