@@ -16,7 +16,7 @@ constructor() { }
     alertify.error(message);
   }
 
-  warnig(message:string){
-    alertify.warnig(message);
+  warning(message:string){
+    alertify.warning(message);
   }
 }
