@@ -1,54 +1,64 @@
 <div class="row mb-5">
-  <div class="col-8">
+  <div class="col-8 shadow-lg p-0 bg-white">
     <div class="card">
       <div class="card-header">
       <h3>List your Property</h3>
       </div>
       <div class="card-body">
-        <form (ngSubmit)="onSubmit()" #Form="ngForm">
+        <form (ngSubmit)='onSubmit()' #Form="ngForm">
           <div class="tab-panel">
             <tabset #propTabs class="member-tabset">
-              <tab heading="Basic Info">
+
+              <tab heading="Basic Info" ngModelGroup="BasicInfo" #BasicInfo="ngModelGroup">
                 <div class="form-group">
                   <p>I want to </p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div class="btn-group" btnRadioGroup ngModel name="SellRent" required>
                     <label class="btn btn-outline-primary me-2" btnRadio=1 tabindex="0" role="button" name="SellRent">Sell</label>
                     <label class="btn btn-outline-primary me-2" btnRadio=2 tabindex="0" role="button" name="SellRent">Rent</label>
                   </div>
                 </div>
                 <div class="form-group">
                   <p>BHK (Bedroom,Hall,Kitchen)</p>
-                  <div class="btn-group" btnRadioGroup>
+                  <div class="btn-group" btnRadioGroup [(ngModel)]="propertyView.BHK" name="BHK">
                     <label *ngFor="let bhk of ['1','2','3','4']" class="btn btn-outline-primary me-2" [btnRadio]="bhk" tabindex="0" role="button" name="SellRent">{{bhk}}</label>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="Name" class="form-label">Name</label>
-                  <input type="text" class="form-control" #propName="ngModel" ngModel name="Name" minlength="5" required>
+                  <p>Property Type</p>
+                  <div class="btn-group" btnRadioGroup name="PType" [(ngModel)]="propertyView.PType">
+                    <label *ngFor="let pType of propertyTypes" class="btn btn-outline-primary me-2" [btnRadio]="pType"
+                    tabindex="0" role="button">{{pType}}</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <p>Furnishing Type</p>
+                  <div class="btn-group" btnRadioGroup [(ngModel)]="propertyView.FType" name="FType">
+                    <label *ngFor="let fType of furnishTypes" class="btn btn-outline-primary me-2" [btnRadio]="fType" tabindex="0" role="button" name="SellRent">{{fType}}</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="Name" class="form-label">inBuilding/Society/Project</label>
+                  <input type="text" class="form-control" #propName="ngModel" ngModel name="Name" minlength="5" required
+                  [(ngModel)]="propertyView.Name">
                   <span *ngIf="!propName.valid && propName.touched" class="error-block">
                     <span *ngIf="propName?.errors?.['required']">Please provide name</span>
                     <span *ngIf="propName?.errors?.['minlength']">Name most be at least 5 char long</span>
                   </span>
                 </div>
                 <div class="form-group">
-                  <p>BHK (Bedroom,Hall,Kitchen)</p>
-                  <div class="btn-group" btnRadioGroup>
-                    <label *ngFor="let bhk of ['1','2','3','4']" class="btn btn-outline-primary me-2" [btnRadio]="bhk" tabindex="0" role="button" name="SellRent">{{bhk}}</label>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="price" class="form-label">Price</label>
-                  <input type="text" ngModel name="Price" class="form-control">
+                  <label for="price" class="form-label">City</label>
+                  <input type="text" class="form-control" [(ngModel)]="propertyView.City" name="City">
                 </div>
                 <div class="form-group pt-2">
-                  <button type="button" class="btn btn-primary btn-sm" (click)="selectTab(1)">Next <i class="fas fa-arrow-right"></i></button>
+                  <button type="button" class="btn btn-primary btn-sm" (click)="selectTab(1)"
+                  [disabled]="!BasicInfo.valid">Next <i class="fas fa-arrow-right"></i></button>
                 </div>
               </tab>
 
-              <tab heading="Pricing and Area">
+              <tab heading="Pricing and Area" ngModelGroup="">
                 <div class="form-group">
                   <label class="form-label">Price (in USD)</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" name="price" [(ngModel)]="propertyView.Price">
                 </div>
                 <div class="form-group">
                   <label class="form-label">Security (in USD)</label>
@@ -60,7 +70,7 @@
                 </div>
                 <div class="form-group">
                   <label class="form-label">Built Area (in Sqr Feet)</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" [(ngModel)]="propertyView.BuiltArea" name="BuiltArea">
                 </div>
                 <div class="form-group">
                   <label class="form-label">Carpet Area (in Sqr Feet)</label>
@@ -97,27 +107,32 @@
 
               <tab heading="Other Details">
                 <div class="form-group">
-                  <label class="form-label">Ready to Move</label><br>
-                  <input type="radio" id="yes" value="1" name="RTM" class="me-1" checked>
-                  <label class="form-label me-4">Yes</label>
-                  <input type="radio" id="no" value="2" name="RTM" class="me-1">
-                  <label class="form-label me-4">No</label>
+                  <p>Ready to Move </p>
+                  <div class="btn-group" btnRadioGroup>
+                    <label class="btn btn-outline-primary me-2" btnRadio=1 tabindex="0" role="button" name="move">Yes</label>
+                    <label class="btn btn-outline-primary me-2" btnRadio=2 tabindex="0" role="button" name="move">No</label>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Possession/Avaialble</label>
-                  <input type="date" class="form-control">
+                  <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker [bsConfig]="{containerClass:'theme-dark-blue',dateInputFormat: 'YYYY-MM-DD'}">
                 </div>
                 <div class="form-group">
                   <label class="form-label">Aria of Property</label>
                   <input type="text"  class="form-control">
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Gated Community</label>
-                  <input type="text" class="form-control">
+                  <p>Gated Community</p>
+                  <div class="btn-group" btnRadioGroup>
+                    <label class="btn btn-outline-primary me-2" btnRadio=1 tabindex="0" role="button" name="Community">Yes</label>
+                    <label class="btn btn-outline-primary me-2" btnRadio=2 tabindex="0" role="button" name="Community">No</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label class="form-label">Main Entrance</label>
-                  <input type="text" class="form-control">
+                  <p>Main Entrance</p>
+                  <div class="btn-group" btnRadioGroup>
+                    <label *ngFor="let Main of ['East','West','South','North']" class="btn btn-outline-primary me-2" [btnRadio]="Main" tabindex="0" role="button" name="Main">{{Main}}</label>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label class="form-label">Description</label>
@@ -150,9 +165,9 @@
   <div class="col-4">
     <div class="card-header">
       <h3>Your Propery Preview</h3>
-      <div>
-        <app-property-card [property]="propertyView"></app-property-card>
-      </div>
+    </div>
+    <div class="shadow-lg p-3 bg-white">
+      <app-property-card [property]="propertyView" [hideIcon]="true"></app-property-card>
     </div>
   </div>
 </div>
