@@ -1,3 +1,4 @@
+import { AlertifyService } from 'src/app/services/alertify.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -6,6 +7,7 @@ import { IPropertyBase } from 'src/app/model/ipropertybase';
 
 
 import { Property } from 'src/app/model/property';
+import { HousingService } from 'src/app/services/housing.service';
 
 @Component({
   selector: 'app-add-property',
@@ -34,10 +36,37 @@ property=new Property();
     RTM:null,
     Image:null
   };
-  constructor(private fb:FormBuilder, private router:Router) { }
+  constructor(private fb:FormBuilder,
+              private router:Router,
+              private housingService:HousingService,
+              private alertify:AlertifyService) { }
 
   ngOnInit() {
     this.createAddPropertyForm();
+  }
+
+  mapProperty():void{
+    this.property.SellRent=this.SellRent.value;
+    this.property.BHK=this.BHK.value;
+    this.property.PType=this.PType.value;
+    this.property.Name=this.Name.value;
+    this.property.City=this.City.value;
+    this.property.FType=this.FType.value;
+    this.property.Security=this.Security.value;
+    this.property.MainEntrance=this.Maintenance.value;
+    this.property.BuiltArea=this.BuildArea.value;
+    this.property.CarpetArea=this.CarpetAera.value;
+    this.property.FloorNo=this.FloorNo.value;
+    this.property.TotalFloor=this.TotalFloor.value;
+    this.property.Address=this.Address.value;
+    this.property.Address2=this.Landmark.value;
+    this.property.RTM=this.ReadyToMove.value;
+    this.property.AOP=this.AOP.value;
+    this.property.Geted=this.Gated.value;
+    this.property.MainEntrance=this.Maintenance.value;
+    this.property.Possession=this.Possession.value;
+    this.property.Description=this.Description.value;
+    this.property.PostedOn=new Date().toString();
   }
 
   createAddPropertyForm(){
@@ -58,16 +87,16 @@ property=new Property();
         CarpetAera:[null]
       }),
       AddressInfo:this.fb.group({
-        Floor:[null],
+        FloorNo:[null],
         TotalFloor:[null],
         Address:[null],
         Landmark:[null]
       }),
       DetailsInfo:this.fb.group({
         ReadyToMove:[null,Validators.required],
-        Avaialble:[null],
+        Possession:[null],
         Age:[null],
-        Area:[null],
+        AOP:[null],
         Gated:[null],
         Entrance:[null],
         Description:[null]
@@ -82,16 +111,25 @@ property=new Property();
     this.isNextClicked=true;
     if(isCurrentTabValid){
       this.propTabs.tabs[tabId].active=true;
+      this.isNextClicked=false;
     }
   }
 
   onSubmit(){
     this.isNextClicked=true;
     if(this.isAllTabsValid()){
-      console.log('Congrats, your property listed successfully on your website');
-      console.log(this.addPropertyForm);
+      this.mapProperty();
+      this.housingService.addProperty(this.property);
+      this.alertify.success("Add Property Seccussfully!");
+      if(this.SellRent.value == '2')
+      {
+        this.router.navigate(['/rent-property']);
+      }else{
+        this.router.navigate(['/']);
+      }
+      this.addPropertyForm.reset();
     }else{
-      console.log('Please review the form and provide all  valid entries');
+      this.alertify.error('Please review the form and provide all valid entries');
     }
   }
 
@@ -175,8 +213,8 @@ property=new Property();
   get getAddressInfo(){
     return this.addPropertyForm.controls['AddressInfo'] as FormGroup;
   }
-  get Floor(){
-    return this.getAddressInfo.controls['Floor'] as FormControl;
+  get FloorNo(){
+    return this.getAddressInfo.controls['FloorNo'] as FormControl;
   }
   get TotalFloor(){
     return this.getAddressInfo.controls['TotalFloor'] as FormControl;
@@ -196,16 +234,16 @@ property=new Property();
   get ReadyToMove(){
     return this.getDetailsInfo.controls['ReadyToMove'] as FormControl;
   }
-  get Avaialble(){
-    return this.getDetailsInfo.controls['Avaialble'] as FormControl;
+  get Possession(){
+    return this.getDetailsInfo.controls['Possession'] as FormControl;
   }
 
   get Age(){
     return this.getDetailsInfo.controls['Age'] as FormControl;
   }
 
-  get Area(){
-    return this.getDetailsInfo.controls['Area'] as FormControl;
+  get AOP(){
+    return this.getDetailsInfo.controls['AOP'] as FormControl;
   }
   get Gated(){
     return this.getDetailsInfo.controls['Gated'] as FormControl;
