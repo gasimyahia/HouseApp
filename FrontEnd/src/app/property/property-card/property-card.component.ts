@@ -1,4 +1,3 @@
-import { IProperty } from './../../model/IProperty';
 import { Component, Input, OnInit } from '@angular/core';
 import { IPropertyBase } from 'src/app/model/ipropertybase';
 
