@@ -3,8 +3,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TabsetComponent } from 'ngx-bootstrap/tabs';
-import { IPropertyBase } from 'src/app/model/ipropertypase';
-
 
 import { Property } from 'src/app/model/property';
 import { HousingService } from 'src/app/services/housing.service';
@@ -23,7 +21,7 @@ property=new Property();
   addPropertyForm:FormGroup;
   propertyTypes:Array<string>=['House','Apartment','Duplex'];
   furnishTypes:Array<string>=['Fully','Semi','Unfurnished'];
-  propertyView:IPropertyBase={
+  propertyView:Property={
     Id:null,
     SellRent:null,
     Name:null,

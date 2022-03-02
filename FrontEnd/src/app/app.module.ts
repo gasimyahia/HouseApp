@@ -1,3 +1,6 @@
+import { SortPipe } from './pipe/sort.pipe';
+import { FiltersPipe } from './pipe/filters.pipe';
+import { PropertyDetailsResolverService } from './property/property-details/property-details-resolver.service';
 import { AlertifyService } from './services/alertify.service';
 import { UserServiceService } from './services/user-service.service';
 import { NgModule } from '@angular/core';
@@ -9,6 +12,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './property/nav-bar/nav-bar.component';
@@ -27,7 +31,8 @@ const appRoutes:Routes=[
   {path:'',component:PropertyListComponent},
   {path:'add-property',component:AddPropertyComponent},
   {path:'rent-property',component:PropertyListComponent},
-  {path:'property-details/:id',component:PropertyDetailsComponent},
+  {path:'property-details/:id',component:PropertyDetailsComponent,
+        resolve:{propRes:PropertyDetailsResolverService}},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'**',component:PropertyListComponent}
@@ -42,7 +47,9 @@ const appRoutes:Routes=[
     AddPropertyComponent,
     PropertyDetailsComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    FiltersPipe,
+    SortPipe
    ],
   imports: [
     BrowserModule,
@@ -50,6 +57,7 @@ const appRoutes:Routes=[
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxGalleryModule ,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
@@ -61,7 +69,8 @@ const appRoutes:Routes=[
     HousingService,
     UserServiceService,
     AlertifyService,
-    AuthService
+    AuthService,
+    PropertyDetailsResolverService
   ],
   bootstrap: [AppComponent]
 })

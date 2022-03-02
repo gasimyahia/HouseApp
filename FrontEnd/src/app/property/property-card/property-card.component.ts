@@ -9,7 +9,7 @@ import { Property } from 'src/app/model/property';
 })
 export class PropertyCardComponent implements OnInit {
 
-  @Input() property :IPropertyBase ;
+  @Input() property :Property ;
   @Input() hideIcon:boolean=false;
 
   constructor() { }
