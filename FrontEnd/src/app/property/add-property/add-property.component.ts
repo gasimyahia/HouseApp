@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TabsetComponent } from 'ngx-bootstrap/tabs';
-import { IPropertyBase } from 'src/app/model/ipropertybase';
+import { IPropertyBase } from 'src/app/model/ipropertypase';
 
 
 import { Property } from 'src/app/model/property';
@@ -25,16 +25,30 @@ property=new Property();
   furnishTypes:Array<string>=['Fully','Semi','Unfurnished'];
   propertyView:IPropertyBase={
     Id:null,
-    Name:'',
-    Price:null,
     SellRent:null,
+    Name:null,
     PType:null,
     FType:null,
+    Price:null,
     BHK:null,
     BuiltArea:null,
+    CarpetArea:null,
+    Address:null,
+    Address2:null,
     City:null,
+    FloorNo:null,
+    TotalFloor:null,
     RTM:null,
-    Image:null
+    AOP:null,
+    MainEntrance:null,
+    Security:null,
+    Gated:null,
+    Maintenance:null,
+    Possession:null,
+    Image:null,
+    Description:null,
+    PostedOn:null,
+    PostedBy:null,
   };
   constructor(private fb:FormBuilder,
               private router:Router,
@@ -46,6 +60,7 @@ property=new Property();
   }
 
   mapProperty():void{
+    this.property.Id= this.housingService.newPropID();
     this.property.SellRent=this.SellRent.value;
     this.property.BHK=this.BHK.value;
     this.property.PType=this.PType.value;
@@ -62,7 +77,7 @@ property=new Property();
     this.property.Address2=this.Landmark.value;
     this.property.RTM=this.ReadyToMove.value;
     this.property.AOP=this.AOP.value;
-    this.property.Geted=this.Gated.value;
+    this.property.Gated=this.Gated.value;
     this.property.MainEntrance=this.Maintenance.value;
     this.property.Possession=this.Possession.value;
     this.property.Description=this.Description.value;
