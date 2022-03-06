@@ -11,6 +11,10 @@ import { Property } from 'src/app/model/property';
 export class PropertyListComponent implements OnInit {
   sellRent=1;
   Properties:Property[];
+  city:string='';
+  searchCity:string='';
+  SortBy:string='';
+  sortDiretion:string='asc';
 
   constructor(private route:ActivatedRoute,private housingService:HousingService) { }
 
@@ -26,6 +30,23 @@ export class PropertyListComponent implements OnInit {
         console.log("httpError : " + e);
       }
     });
+  }
+
+  onCityFilter(){
+    this.searchCity=this.city;
+  }
+
+  onCityClear(){
+    this.searchCity='';
+    this.city='';
+  }
+
+  onSortBy(){
+    if(this.sortDiretion=='desc'){
+      this.sortDiretion='asc';
+    }else{
+      this.sortDiretion='desc';
+    }
   }
 
 }

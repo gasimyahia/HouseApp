@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "site-housing"
+  },
+  "targets": {
+    "site-housing": {
+      "hosting": {
+        "housingApp": [
+          "site-housing"
+        ]
+      }
+    }
+  }
+}
