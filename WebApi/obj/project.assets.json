@@ -142,14 +142,14 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/6.0.1": {
+      "Microsoft.EntityFrameworkCore.Design/6.0.2": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.8.26",
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.1"
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.2"
         },
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {}
+          "lib/net6.0/_._": {}
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {}
@@ -1034,10 +1034,10 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/6.0.1": {
-      "sha512": "odZLopaluipZXgJxue4VbBXe9YoTOOmg324rkyr0XqXWR7DSdWy5Mi0+99OvsOmvl6LxEqK4IOgNnycB+oF3pQ==",
+    "Microsoft.EntityFrameworkCore.Design/6.0.2": {
+      "sha512": "U5nqbIKJ8LQF/T1BzMjL35mwhTPsEUsjLhX+GjPQcrKaavv6oczCdznhr7VbEmCmGSjQjSarNqXkSCneUX2mXA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/6.0.1",
+      "path": "microsoft.entityframeworkcore.design/6.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1045,7 +1045,7 @@
         "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.6.0.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.6.0.2.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
@@ -2204,31 +2204,26 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.2",
-      "Microsoft.EntityFrameworkCore >= 6.0.2",
-      "Microsoft.EntityFrameworkCore.Design >= 6.0.1",
+      "Microsoft.EntityFrameworkCore.Design >= 6.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.2",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Zain_Oasis\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\server\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "E:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "e:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
-      "packagesPath": "C:\\Users\\Zain_Oasis\\.nuget\\packages\\",
-      "outputPath": "e:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\obj\\",
+      "projectPath": "E:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\server\\.nuget\\packages\\",
+      "outputPath": "E:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Zain_Oasis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\server\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2258,13 +2253,11 @@
             "target": "Package",
             "version": "[6.0.2, )"
           },
-          "Microsoft.EntityFrameworkCore": {
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.2, )"
-          },
-          "Microsoft.EntityFrameworkCore.Design": {
-            "target": "Package",
-            "version": "[6.0.1, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -2300,16 +2293,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Detected package downgrade: Microsoft.EntityFrameworkCore.Design from 6.0.2 to 6.0.1. Reference the package directly from the project to select a different version. \r\n WebApi -> Microsoft.EntityFrameworkCore.Tools 6.0.2 -> Microsoft.EntityFrameworkCore.Design (>= 6.0.2) \r\n WebApi -> Microsoft.EntityFrameworkCore.Design (>= 6.0.1)",
-      "libraryId": "Microsoft.EntityFrameworkCore.Design",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

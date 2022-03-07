@@ -17,7 +17,7 @@ export class AddPropertyComponent implements OnInit {
 @ViewChild('propTabs') propTabs:TabsetComponent;
 isNextClicked:boolean=false;
 property=new Property();
-cities:string[];
+cities:any[];
 
   addPropertyForm:FormGroup;
   propertyTypes:Array<string>=['House','Apartment','Duplex'];
