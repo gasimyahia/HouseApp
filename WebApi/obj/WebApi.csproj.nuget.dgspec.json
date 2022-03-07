@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "e:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj": {}
+    "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "e:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj": {
+    "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "e:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
-        "packagesPath": "C:\\Users\\Zain_Oasis\\.nuget\\packages\\",
-        "outputPath": "e:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\obj\\",
+        "projectPath": "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\server\\.nuget\\packages\\",
+        "outputPath": "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Zain_Oasis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\server\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,18 +41,6 @@
           "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.2, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.2, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "target": "Package",
-              "version": "[6.0.1, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.2, )"
             },
