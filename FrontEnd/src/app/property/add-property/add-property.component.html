@@ -65,7 +65,7 @@
                   <label for="price" class="form-label">City</label>
                   <select type="text" class="form-control" [(ngModel)]="propertyView.City" formControlName="City">
                     <option value="">-- Select City --</option>
-                    <option *ngFor="let city of cities" value="city">{{city}}</option>
+                    <option *ngFor="let city of cities" value="city.id">{{city.name}}</option>
                   </select>
                   <div class="error-block" *ngIf="City.invalid && (isNextClicked || City.touched)">
                     <span>Please Select City</span>

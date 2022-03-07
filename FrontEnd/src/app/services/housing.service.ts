@@ -71,7 +71,7 @@ export class HousingService {
     }
   }
 
-  getCities():Observable<string[]>{
-    return this.http.get<string[]>("http://localhost:5073/api/City");
+  getCities():Observable<any[]>{
+    return this.http.get<any[]>("http://localhost:5073/api/City");
   }
 }

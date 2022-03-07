@@ -1,11 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using WebApi.Data;
+using WebApi.Data.Repo;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<DataContext>(options=> 
     options.UseSqlServer(builder.Configuration.GetConnectionString("default_db")));
+
+builder.Services.AddScoped<ICityRepository,CityRepository>();
+
 builder.Services.AddCors(options=>{
     options.AddDefaultPolicy(bu=>{
         bu.WithOrigins("http://localhost:4200")

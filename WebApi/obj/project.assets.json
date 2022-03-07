@@ -88,7 +88,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "6.0.2"
         },
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {}
+          "lib/net6.0/_._": {}
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {}
@@ -1020,6 +1020,11 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.2",
+<<<<<<< HEAD
+=======
+      "Microsoft.EntityFrameworkCore.Design >= 6.0.2",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.2",
+>>>>>>> cf99e20127c2d6d5d00f6e9ff599aa8c0be7ea2d
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.2",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -1030,11 +1035,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
       "projectPath": "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\server\\.nuget\\packages\\",
       "outputPath": "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\obj\\",
+=======
+      "projectUniqueName": "E:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
+      "projectName": "WebApi",
+      "projectPath": "E:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\server\\.nuget\\packages\\",
+      "outputPath": "E:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\obj\\",
+>>>>>>> cf99e20127c2d6d5d00f6e9ff599aa8c0be7ea2d
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\server\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1067,6 +1080,19 @@
             "target": "Package",
             "version": "[6.0.2, )"
           },
+<<<<<<< HEAD
+=======
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.0.2, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[6.0.2, )"
+          },
+>>>>>>> cf99e20127c2d6d5d00f6e9ff599aa8c0be7ea2d
           "Microsoft.EntityFrameworkCore.Tools": {
             "target": "Package",
             "version": "[6.0.2, )"
