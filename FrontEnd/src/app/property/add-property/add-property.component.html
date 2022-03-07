@@ -63,10 +63,12 @@
                 </div>
                 <div class="form-group">
                   <label for="price" class="form-label">City</label>
-                  <input type="text" class="form-control" [(ngModel)]="propertyView.City" formControlName="City">
-                  <div class="error-block" *ngIf="Name.invalid && (isNextClicked || Name.touched)">
-                    <span *ngIf="City?.errors?.['required']">Please provide City</span>
-                    <span *ngIf="City?.errors?.['minlength']">City most be at least 5 char long</span>
+                  <select type="text" class="form-control" [(ngModel)]="propertyView.City" formControlName="City">
+                    <option value="">-- Select City --</option>
+                    <option *ngFor="let city of cities" value="city">{{city}}</option>
+                  </select>
+                  <div class="error-block" *ngIf="City.invalid && (isNextClicked || City.touched)">
+                    <span>Please Select City</span>
                   </div>
                 </div>
                 <div class="form-group pt-2">

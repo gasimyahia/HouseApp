@@ -17,6 +17,7 @@ export class AddPropertyComponent implements OnInit {
 @ViewChild('propTabs') propTabs:TabsetComponent;
 isNextClicked:boolean=false;
 property=new Property();
+cities:string[];
 
   addPropertyForm:FormGroup;
   propertyTypes:Array<string>=['House','Apartment','Duplex'];
@@ -33,7 +34,7 @@ property=new Property();
     CarpetArea:null,
     Address:null,
     Address2:null,
-    City:null,
+    City:'',
     FloorNo:null,
     TotalFloor:null,
     RTM:null,
@@ -55,6 +56,13 @@ property=new Property();
 
   ngOnInit() {
     this.createAddPropertyForm();
+    this.housingService.getCities().subscribe({
+      next:(data)=>{
+        this.cities=data;
+        console.log("city :"+data);
+
+      }
+    })
   }
 
   mapProperty():void{
@@ -65,6 +73,7 @@ property=new Property();
     this.property.Name=this.Name.value;
     this.property.City=this.City.value;
     this.property.FType=this.FType.value;
+    this.property.Price=this.Price.value;
     this.property.Security=this.Security.value;
     this.property.MainEntrance=this.Maintenance.value;
     this.property.BuiltArea=this.BuildArea.value;
