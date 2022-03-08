@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using WebApi.Interfaces;
 using WebApi.Data;
-using WebApi.Data.Repo;
+using WebApi.Helpers.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DataContext>(options=> 
     options.UseSqlServer(builder.Configuration.GetConnectionString("default_db")));
 
-builder.Services.AddScoped<ICityRepository,CityRepository>();
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
+builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
 
 builder.Services.AddCors(options=>{
     options.AddDefaultPolicy(bu=>{

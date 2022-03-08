@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj": {}
+    "E:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj": {
+    "E:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "E:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
-        "packagesPath": "C:\\Users\\server\\.nuget\\packages\\",
-        "outputPath": "e:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\obj\\",
+        "projectPath": "E:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\Zain_Oasis\\.nuget\\packages\\",
+        "outputPath": "E:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\server\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Zain_Oasis\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +43,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.2, )"
