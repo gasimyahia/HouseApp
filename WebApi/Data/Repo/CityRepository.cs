@@ -23,10 +23,19 @@ namespace WebApi.Data.Repo
             dc.Cities.Remove(city);
         }
 
+        public async Task<City> FindCity(int cityId)
+        {
+            return await dc.Cities.FindAsync(cityId);
+        }
+
         public async Task<IEnumerable<City>> getCitiesAsync()
         {
             return await dc.Cities.ToListAsync();
         }
 
+        public void updateCity(City city)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
