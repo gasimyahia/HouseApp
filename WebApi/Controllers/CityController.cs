@@ -14,9 +14,7 @@ using Microsoft.AspNetCore.JsonPatch;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CityController : ControllerBase
+    public class CityController : BaseController
     {
         private readonly IUnitOfWork uow;
         private readonly IMapper mapper;
@@ -30,7 +28,7 @@ namespace WebApi.Controllers
         [HttpGet("")]
         public async Task<IActionResult> Get()
         {
-            throw new UnauthorizedAccessException();
+            //throw new UnauthorizedAccessException();
             var cities=await uow.CityRepository.getCitiesAsync();
             // var dto=cities.Select(x=> new CityDto(){ Id=x.Id,Name=x.Name });
 
@@ -42,7 +40,7 @@ namespace WebApi.Controllers
         [HttpPost("add")]
         public async Task<IActionResult> AddCity([FromBody]CityDto cityDto)
         {
-            throw new Exception("enternal server error!");
+            //throw new Exception("enternal server error!");
             var city=mapper.Map<City>(cityDto);
             city.LastUpdatedBy=1;
             city.LastUpdatedOn=DateTime.Now;
