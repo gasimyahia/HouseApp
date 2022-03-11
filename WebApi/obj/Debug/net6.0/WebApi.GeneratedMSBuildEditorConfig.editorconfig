@@ -8,17 +8,9 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApi
 build_property.RootNamespace = WebApi
-<<<<<<< HEAD
 build_property.ProjectDir = E:\gasim\other\angular\Projects\HouseApp\WebApi\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = E:\gasim\other\angular\Projects\HouseApp\WebApi
-=======
-build_property.ProjectDir = E:\gasim\angular\Projects\HouseApp\WebApi\
-build_property.RazorLangVersion = 6.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\gasim\angular\Projects\HouseApp\WebApi
->>>>>>> 660003c0ac1c4a204eae2b13e53da348761c5057
 build_property._RazorSourceGeneratorDebug = 
