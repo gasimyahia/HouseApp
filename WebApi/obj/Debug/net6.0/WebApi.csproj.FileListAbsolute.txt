@@ -136,3 +136,9 @@ E:\gasim\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.
 E:\gasim\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 E:\gasim\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 E:\gasim\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+E:\gasim\other\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\AutoMapper.dll
+E:\gasim\other\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\gasim\other\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\gasim\other\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\gasim\other\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\gasim\other\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

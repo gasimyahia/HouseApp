@@ -2402,23 +2402,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Zain_Oasis\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\server\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "E:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "e:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
-      "packagesPath": "C:\\Users\\Zain_Oasis\\.nuget\\packages\\",
-      "outputPath": "e:\\gasim\\angular\\Projects\\HouseApp\\WebApi\\obj\\",
+      "projectPath": "E:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\server\\.nuget\\packages\\",
+      "outputPath": "E:\\gasim\\other\\angular\\Projects\\HouseApp\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Zain_Oasis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\server\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
