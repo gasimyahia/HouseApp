@@ -11,6 +11,7 @@ namespace WebApi.Data
         {
             this.dc = dc;
         }
+        public IUserRepository UserRepository => new UserRepository(dc);
         public ICityRepository CityRepository => new CityRepository(dc);
 
         public async Task<bool> SaveChangesAsync()

@@ -14,9 +14,7 @@ using Microsoft.AspNetCore.JsonPatch;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CityController : ControllerBase
+    public class CityController : BaseController
     {
         private readonly IUnitOfWork uow;
         private readonly IMapper mapper;
