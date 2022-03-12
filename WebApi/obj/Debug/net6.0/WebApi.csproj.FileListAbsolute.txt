@@ -142,3 +142,4 @@ E:\gasim\other\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Microsoft.AspNe
 E:\gasim\other\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 E:\gasim\other\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 E:\gasim\other\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+E:\gasim\other\angular\Projects\HouseApp\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -1,19 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using WebApi.Data.Repo;
 using WebApi.Models;
 using WebApi.Interfaces;
 using WebApi.Dtos;
 using AutoMapper;
-using System.Collections;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApi.Controllers
 {
+    [Authorize]
     public class CityController : BaseController
     {
         private readonly IUnitOfWork uow;
@@ -25,7 +20,8 @@ namespace WebApi.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet("")]
+        [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Get()
         {
             //throw new UnauthorizedAccessException();

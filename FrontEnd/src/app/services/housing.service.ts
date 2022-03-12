@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Property } from 'src/app/model/property';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,6 +9,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class HousingService {
+
+  baseUrl=environment.baseUrl;
 
   constructor(private http:HttpClient) {
   }
@@ -72,6 +75,6 @@ export class HousingService {
   }
 
   getCities():Observable<any[]>{
-    return this.http.get<any[]>("http://localhost:5073/api/City");
+    return this.http.get<any[]>(this.baseUrl+"/api/City");
   }
 }

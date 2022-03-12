@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Interfaces;
@@ -18,18 +19,52 @@ namespace WebApi.Data.Repo
         }
         public async Task<User> Authenticate(string UserNmae, string password)
         {
-            return await dc.Users.FirstOrDefaultAsync(x => x.Username == UserNmae && x.Password == password);
+            var user= await dc.Users.FirstOrDefaultAsync(x => x.Username == UserNmae );
+            if(user == null || user.PasswordKey==null)
+            return null;
+
+            if(!MatchPasswordHash(password,user.Password,user.PasswordKey))
+            return null;
+
+            return user;
         }
 
-        public async Task<User> FindUser(User user)
+        private bool MatchPasswordHash(string passwordText, byte[] password, byte[] passwordKey)
         {
-            return await dc.Users.FirstOrDefaultAsync(x=> x.Username == user.Username);
+            using(var hmac =new HMACSHA512(passwordKey))
+            {
+                var  passwordHash=hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(passwordText));
+
+                for(int i=0; i<passwordHash.Length;i++)
+                {
+                    if(passwordHash[i] != password[i])
+                    return false;
+                }
+                return true;
+
+            }
         }
 
-        public async Task<User> Register(User user)
+        public void Register(string UserNmae, string password)
         {
-            var result= await dc.Users.AddAsync(user);
-            return result.Entity;
+            byte[] passwordHash,passwordKey;
+            using(var hmac =new HMACSHA512())
+            {
+                passwordKey=hmac.Key;
+                passwordHash=hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+            }
+
+            User user=new User();
+            user.Username=UserNmae;
+            user.Password=passwordHash;
+            user.PasswordKey=passwordKey;
+
+            dc.Users.Add(user);
+        }
+
+        public Task<bool> UserAlreadyExists(string Username)
+        {
+            return dc.Users.AnyAsync(x=> x.Username == Username);
         }
     }
 }

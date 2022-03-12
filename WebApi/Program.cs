@@ -2,10 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using WebApi.Interfaces;
 using WebApi.Data;
 using WebApi.Helpers.Mapping;
-using System.Net;
-using Microsoft.AspNetCore.Diagnostics;
 using WebApi.Middlewares;
 using WebApi.Extensions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,19 @@ builder.Services.ConfigureCORS();
 builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+var secretKey=builder.Configuration.GetSection("AppSettings:Key").Value;
+var key=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(op=>{
+        op.TokenValidationParameters=new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey=true,
+            ValidateIssuer=false,
+            ValidateAudience=false,
+            IssuerSigningKey=key
+        };
+    });
+
 
 var app = builder.Build();
 
@@ -31,8 +45,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthorization();
 app.UseCors();
+app.UseAuthentication();
+app.UseAuthorization();
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.MapControllers();
 
 app.Run();
